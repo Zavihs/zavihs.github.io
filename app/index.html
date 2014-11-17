@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div class="wrapper">
+
+      <meta name="resource-type" content="document" />
+      <meta name="description" content="Accounting, investor relations in Mining" />
+      <meta name="keywords" content="Accounting, Bookkeeping, CFO, MD & A, Vancouver, Richmond, M&A, Management consulting, quarterly and annual financial reporting, investor relations ,mining, china mining, finance" />
+      <meta name="copyright" content=" GA Business Group Inc. 2005-2014" />
+      
+      <nav class="navbar navbar-inverse navbar-static" role="navigation">
+        <div class="container">
+          <div class="navbar-header" id="top">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/about">  GA Business Group ©</a>
+
+          </div>
+
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/about"><i class="glyphicon glyphicon-home" style="vertical-align:center"></i> Home</a>
+              </li>
+              <li><a href="#/testimonials"><i class="fa fa-users" style="vertical-align:center"></i> Testimonials</a>
+              </li>
+              <li><a href="#/photo"><span class="glyphicon glyphicon-camera" style="vertical-align:center"></span> Photo Gallery</a>
+              </li>
+              <li><a href="#/contact"><span class="glyphicon glyphicon-globe" style="vertical-align:center"></span> Contact US</a>
+              </li>
+              <li><a href="#/blog"><span class="glyphicon glyphicon-comment" style="vertical-align:center"></span> Blog</a>
+              </li>
+              <li>
+                <h4> <span class="label label-warning" style="horizontal-align:right">中文:</span> <input  type="checkbox" ng-init = "english = !chinese" ng-model ="chinese" ng-change ="english = !chinese; saveSetting()" id="lang" style="vertical-align: top"/><br/></h4>
+              </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+
+    <div ng-view></div>
+   <div class="scroll-top-wrapper">
+    <span class="scroll-top-inner">
+        <i class="fa fa-caret-square-o-up fa-2x"></i>
+    </span>
+    </div>
+
+    <div class="push"></div>
+    </div>
+
+    <div class="footer footer-custom-color">
+    <hr class="featurette-divider">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-12 centered">
+             <ul class="list-unstyled list-inline list-social-icon" >
+        <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/GaBusinessGroupInc/info" data-toggle="tooltip"
+            data-placement="top" title="Facebook" target="_blank"><i
+            class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li class="tooltip-social linkedin-link"><a href="http://ca.linkedin.com/in/jiejennyfang2009" data-toggle="tooltip"
+                data-placement="top" title="LinkedIn" target="_blank"><i
+                class="fa fa-linkedin-square fa-2x"></i></a></li>
+                <li class="tooltip-social twitter-link"><a href="https://twitter.com/jiejennyfang" data-toggle="tooltip"
+                   data-placement="top" title="Twitter" target="_blank"><i
+                   class="fa fa-twitter-square fa-2x"></i></a></li>
+                <li><a class="btn btn-custom-spin-contact" href="#/contact" role="button" style="vertical-align:bottom">Send us a message!</a></li>
+               </ul>
+        </div>
+        <div class="col-md-12 centered">
+        <h4  style="color: #CCC; vertical-align:top">© GA Business Group Inc. 2005-2014. All rights reserved.</h4>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular-cookies.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+</body>
+</html>

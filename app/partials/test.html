@@ -1,0 +1,15 @@
+<div ng-app="myApp">
+    
+    <div id="lang" ng-controller="CookieCtrl">
+        <!-- <button ng-click="saveSetting()">Bump!</button> -->
+        <input  type="checkbox" ng-init = "english = !chinese" ng-model="chinese" ng-change="english = !chinese; saveSetting()" id="lang" style="vertical-align: top"/>
+    </div>
+</div>
+
+<!-- 
+<div ng-app="myApp">
+    <div id="lastVal" ng-controller="ShowerCtrl">{{ lastVal }}</div>
+    <div id="button-holder" ng-controller="CookieCtrl">
+        <button ng-click="bump()">Bump!</button>
+    </div>
+</div> -->

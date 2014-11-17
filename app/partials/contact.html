@@ -1,0 +1,123 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"><span class="glyphicon glyphicon-globe globehover" style="vertical-align:top"></span>    Contact
+            </h1>   
+            <ol class="breadcrumb">
+                <li><a href="#/about.html">Home</a></li>
+                <li class="active">Contact</li>
+            </ol>         
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <span ng-if="english" class="animate-if">
+                <h2>
+                    <small>Please contact GA Business Group Inc. as follows</small>
+                </h2>
+            </span>
+
+            <span ng-if="chinese" class="animate-if">
+                <h2>
+                    <small>以下方式联系我们</small>
+                </h2>
+            </span>
+
+        <h3>GA Business Group Inc.</h3>
+
+        <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (604) 295-5487</p>
+        <p><i class="fa fa-phone"></i> <abbr title="Cell">C</abbr>: (604) 657-9079</p>
+        <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:jenny@gabusinessgroupinc.com">jenny@gabusinessgroupinc.com</a></p>
+        <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+
+        <span ng-if="chinese" class="animate-if">
+         <p><i class="fa fa-phone"></i> <abbr title="Phone">国内客户免费专线</abbr>: (950) 4035-0660</p>
+         <p><i class="fa fa-qq"></i> <abbr title="QQ">QQ</abbr>: 1413582959</p>
+         <p>新浪微博: 矿业投资加拿大 - 方洁</p>
+         <p>腾讯微博:   方洁</p>
+     </span>
+
+     <ul class="list-unstyled list-inline list-social-icons">
+        <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/GaBusinessGroupInc/info" data-toggle="tooltip"
+            data-placement="top" title="Facebook" target="_blank"><i
+            class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li class="tooltip-social linkedin-link"><a href="http://ca.linkedin.com/in/jiejennyfang2009" data-toggle="tooltip"
+                data-placement="top" title="LinkedIn" target="_blank"><i
+                class="fa fa-linkedin-square fa-2x"></i></a></li>
+                <li class="tooltip-social twitter-link"><a href="https://twitter.com/jiejennyfang" data-toggle="tooltip"
+                   data-placement="top" title="Twitter" target="_blank"><i
+                   class="fa fa-twitter-square fa-2x"></i></a></li>
+               </ul>
+           </div>
+
+           <div class="col-sm-8">
+            <h3>Let's Get In Touch!</h3>
+
+            <p>If you have any additional questions regarding our services and would like to inquire more. Please fill out the form below with a valid name, email address, and your message. We will get back to you as soon as possible. 
+            </p>
+            <form  name="myform" class="form-horizontal" ng-controller="contactCtrl" novalidate>
+
+                <div class="control-group" ng-class="{error:!myform.username.$valid}">
+                    <div class="form-group col-lg-4">
+                        <label for="inputUsername" class="control-label"><i class="fa fa-user"></i> Name</label>
+                        <div class="controls">
+                            <input type="text" id="inputUsername" name="username" class="form-control" ng-model="formData.username" placeholder="John Doe" valid-username />
+                            <div class="help-inline">
+                                <span ng-show="!!myform.username.$error.isBlank"><font color="red"><i class="fa fa-exclamation-triangle"></i> Name required.</font></span>
+                                <span ng-show="!!myform.username.$error.invalidChars"><font color="red"><i class="fa fa-exclamation-triangle"></i> Name must contain letters &amp; spaces only.</font></span>
+                                <span ng-show="!!myform.username.$error.invalidLen"><font color="red"><i class="fa fa-exclamation-triangle"></i> Name must be 3-20 characters.</font></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error:!myform.email.$valid}">
+                    <div class="form-group col-lg-4">
+                        <label for="inputEmail" class="control-label"><i class="fa fa-at"></i> Email</label>
+                        <div class="controls">
+                        <input type="text" id="inputEmail" name="email" class="form-control" ng-model="formData.email" placeholder="Example@Gmail.com" valid-email />
+                            <div class="help-inline">
+                                <span ng-show="!!myform.email.$error.isBlank"><font color="red"><i class="fa fa-exclamation-triangle"></i> Email required.</font></span>
+                                <span ng-show="!!myform.email.$error.invalid"><font color="red"><i class="fa fa-exclamation-triangle"></i> Email is not valid.</font></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error:!myform.phone.$valid}">
+                    <div class="form-group col-lg-4">
+                        <label for="inputPhone" class="control-label"><i class="fa fa-phone"></i> Phone (optional)</label>
+                        <div class="controls">
+                            <input type="text" id="inputPhone" name="phone" class="form-control" ng-model="formData.phone" placeholder="1234567890" valid-phone />
+                            <div class="help-inline">
+                                <span ng-show="!!myform.phone.$error.invalidChars"><font color="orange"><span class="glyphicon glyphicon-exclamation-sign"></span> Phone should only contain values between 0-9</font></span>
+                                <span ng-show="!!myform.phone.$error.invalidLen"><font color="orange"><span class="glyphicon glyphicon-exclamation-sign"></span> Phone number should be 10 numbers</font></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group" ng-class="{error:!myform.message.$valid}">
+                    <div class="form-group col-lg-12">
+                        <label for="inputUsername" class="control-label"><i class="fa fa-comment-o"></i> Message</label>
+                        <div class="controls">
+                            <textarea name="message" id="inputUsername" class="form-control" rows="6" ng-model="formData.message" placeholder="Hello, we would like to inquire more about your business!" valid-message />
+                            <div class="help-inline">
+                                <span ng-show="!!myform.message.$error.isBlank"><font color="red"><i class="fa fa-exclamation-triangle"></i> Message required.</font></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="form-actions" ng-show="formAllGood()">
+                            <input type="submit" class="btn btn-custom-spin" value="Submit" ng-click="submit()" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
