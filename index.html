@@ -6,8 +6,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
+  <title>Welcome to GA Business Group Inc.</title>
+  <meta name="resource-type" content="document" />
+  <meta name="description" content="Accounting, investor relations in Mining" />
+  <meta name="keywords" content="Accounting, Bookkeeping, CFO, MD & A, Vancouver, Richmond, M&A, Management consulting, quarterly and annual financial reporting, investor relations ,mining, china mining, finance" />
+  <meta name="copyright" content=" GA Business Group Inc. 2005-2014" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
@@ -20,13 +23,8 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <div class="wrapper">
+    <div class="wrapper">
 
-      <meta name="resource-type" content="document" />
-      <meta name="description" content="Accounting, investor relations in Mining" />
-      <meta name="keywords" content="Accounting, Bookkeeping, CFO, MD & A, Vancouver, Richmond, M&A, Management consulting, quarterly and annual financial reporting, investor relations ,mining, china mining, finance" />
-      <meta name="copyright" content=" GA Business Group Inc. 2005-2014" />
-      
       <nav class="navbar navbar-inverse navbar-static" role="navigation">
         <div class="container">
           <div class="navbar-header" id="top">
@@ -36,9 +34,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-
             <a class="navbar-brand" href="#/about">  GA Business Group ©</a>
-
           </div>
 
           <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -56,48 +52,44 @@
               <li>
                 <h4> <span class="label label-warning" style="horizontal-align:right">中文:</span> <input  type="checkbox" ng-init = "english = !chinese" ng-model ="chinese" ng-change ="english = !chinese; saveSetting()" id="lang" style="vertical-align: top"/><br/></h4>
               </li>
-          </ul>
-        </div>
+            </ul>
+          </div>
         <!-- /.navbar-collapse -->
-      </div>
+        </div>
       <!-- /.container -->
-    </nav>
+      </nav>
 
 
-    <div ng-view></div>
-   <div class="scroll-top-wrapper">
-    <span class="scroll-top-inner">
-        <i class="fa fa-caret-square-o-up fa-2x"></i>
-    </span>
-    </div>
+      <div ng-view></div>
+        <div class="scroll-top-wrapper">
+          <span class="scroll-top-inner">
+            <i class="fa fa-caret-square-o-up fa-2x"></i>
+          </span>
+        </div>
 
-    <div class="push"></div>
+      <div class="push"></div>
     </div>
 
     <div class="footer footer-custom-color">
-    <hr class="featurette-divider">
-      <div class="container">
-        <div class="row">
-        <div class="col-md-12 centered">
-             <ul class="list-unstyled list-inline list-social-icon" >
-        <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/GaBusinessGroupInc/info" data-toggle="tooltip"
-            data-placement="top" title="Facebook" target="_blank"><i
-            class="fa fa-facebook-square fa-2x"></i></a></li>
-            <li class="tooltip-social linkedin-link"><a href="http://ca.linkedin.com/in/jiejennyfang2009" data-toggle="tooltip"
-                data-placement="top" title="LinkedIn" target="_blank"><i
-                class="fa fa-linkedin-square fa-2x"></i></a></li>
+      <hr class="featurette-divider">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 centered">
+              <ul class="list-unstyled list-inline list-social-icon" >
+                <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/GaBusinessGroupInc/info" data-toggle="tooltip"
+            data-placement="top" title="Facebook" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                <li class="tooltip-social linkedin-link"><a href="http://ca.linkedin.com/in/jiejennyfang2009" data-toggle="tooltip"
+                data-placement="top" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
                 <li class="tooltip-social twitter-link"><a href="https://twitter.com/jiejennyfang" data-toggle="tooltip"
-                   data-placement="top" title="Twitter" target="_blank"><i
-                   class="fa fa-twitter-square fa-2x"></i></a></li>
+                   data-placement="top" title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a></li>
                 <li><a class="btn btn-custom-spin-contact" href="#/contact" role="button" style="vertical-align:bottom">Send us a message!</a></li>
-               </ul>
+              </ul>
+            </div>
+            <div class="col-md-12 centered">
+              <h4  style="color: #CCC; vertical-align:top">© GA Business Group Inc. 2005-2014. All rights reserved.</h4>
+            </div>
+          </div>
         </div>
-        <div class="col-md-12 centered">
-        <h4  style="color: #CCC; vertical-align:top">© GA Business Group Inc. 2005-2014. All rights reserved.</h4>
-        </div>
-
-      </div>
-    </div>
     </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -110,7 +102,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular-cookies.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
-
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>
 <script src="js/controllers.js"></script>
