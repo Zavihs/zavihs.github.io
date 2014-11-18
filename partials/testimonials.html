@@ -1,61 +1,59 @@
 <div class="container">
 
 	<div class="row">
-
-
-
-		<span ng-if="english" class="animate-if">
+		<span ng-if="english">
 			<div class="col-lg-12">
-				<h1 class="page-header"><i class="fa fa-users testimonialhover"></i> Testimonials
+				<h1 class="page-header">
+					<i class="fa fa-users testimonialhover"></i> Testimonials
 				</h1>
-						<ol class="breadcrumb">
-			<li><a href="#/about.html">Home</a></li>
-			<li class="active">Testimonials</li>
-		</ol>
+				<ol class="breadcrumb">
+					<li><a href="#/about.html">Home</a></li>
+					<li class="active">Testimonials</li>
+				</ol>
 			</div>
 		</span>
 
-		<span ng-if="chinese" class="animate-if">
+		<span ng-if="chinese">
 			<div class="col-lg-12">
 				<h1 class="page-header"> <i class="fa fa-users"></i> 客户推荐
 				</h1>
-						<ol class="breadcrumb">
-			<li><a href="#/about.html">Home</a></li>
-			<li class="active">Testimonials</li>
-		</ol>
+				<ol class="breadcrumb">
+					<li><a href="#/about.html">Home</a></li>
+					<li class="active">Testimonials</li>
+				</ol>
 			</div>
 		</span>
 	</div>
 
-	<span ng-if="english" class="animate-if">
+	<span ng-if="english">
 		<div class ="row">
-		<div class="col-lg-12">
-		<div infinite-scroll='incrementLimit()' infinite-scroll-distance='0'>
-			<div ng-repeat="item in items | limitTo: limit">
-				<div class="jumbotron" style="border-left: 3px solid #CCC">
-					<h4><i><div class="texthover">{{item.enbody}}</div></i></h4>
-					<h3 align="right">{{item.enperson}}</h3>			
-					<p><a class="btn btn-custom-spin btn-lg" href="{{item.company}}" role="button" target="_blank">Company website</a></p>
+			<div class="col-lg-12">
+				<div infinite-scroll='incrementLimit()' infinite-scroll-distance='0'>
+					<div ng-repeat="item in items | limitTo: limit">
+						<div class="jumbotron" style="border-left: 3px solid #CCC">
+							<h4><i><div class="texthover">{{item.enbody}}</div></i></h4>
+							<h3 align="right">{{item.enperson}}</h3>			
+							<p><a class="btn btn-custom-spin btn-lg" href="{{item.company}}" role="button" target="_blank">Company website</a></p>
+						</div>
+					</div>
 				</div>
-			</div>
-			</div>
 			</div>
 		</div>
 	</span>
 
-	<span ng-if="chinese" class="animate-if">
+	<span ng-if="chinese">
 		<div class ="row">
-		<div class="col-lg-12">
-		<div infinite-scroll='incrementLimit()' infinite-scroll-distance='0'>
-			<div ng-repeat="item in items | limitTo: limit">
-				<div class="jumbotron">
-					<h4><i>{{item.chbody}}</i></h4>
-					<h3>{{item.chperson}}</h3>				
-					<p><a class="btn btn-custom-spin btn-lg" href="{{item.link}}" role="button" target="_blank">公司网站</a></p>
+			<div class="col-lg-12">
+				<div infinite-scroll='incrementLimit()' infinite-scroll-distance='0'>
+					<div ng-repeat="item in items | limitTo: limit">
+						<div class="jumbotron style=border-left: 3px solid #CCC">
+							<h4><i><div class="texthover">{{item.chbody}}</i></h4>
+							<h3 align="right">{{item.chperson}}</h3>				
+							<p><a class="btn btn-custom-spin btn-lg" href="{{item.company}}" role="button" target="_blank">公司网站</a></p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		</div>
 		</div>
 	</span>
 

@@ -5,7 +5,6 @@
 			<h1 class="page-header">
 				<span class="glyphicon glyphicon-camera camerahover" style="vertical-align:top"></span>      Photos
 			</h1>   
-
 			<ol class="breadcrumb">
 				<li><a href="#/about.html">Home</a></li>
 				<li class="active">Photos</li>
@@ -17,23 +16,22 @@
 		<div ng-repeat="item in items | limitTo: limit">
 			<div class="col-md-4 centered" >
 				<div class="thumbnail">
-					<img ng-src="{{item.image}}" 
-					alt="Generic placeholder thumbnail">
-				
+					<img ng-src="{{item.image}}" alt="Generic placeholder thumbnail">		
 				<div class="caption">
-					<span ng-if="english" class="animate-if">
+					<span ng-if="english">
 						<h4>{{item.enbody}}</h4>
 					</span>
-					<span ng-if="chinese" class="animate-if">
+					<span ng-if="chinese">
 						<h4>{{item.chbody}}</h4>
 					</span>
-					</div>	
+				</div>	
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<hr class="featurette-divider photodivider">
+
 	<div class="row">
 		<span ng-if="LimitNotReached()">
 			<div class="col-md-1">
@@ -49,6 +47,5 @@
 			</div>
 		</span>
 	</div>
-
 
 </div>

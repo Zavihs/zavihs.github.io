@@ -1,3 +1,19 @@
+html,body {
+  height: 100%;
+}
+
+a {
+  color: #80BD01;
+}
+
+a:hover {
+  color: #000000;
+}
+
+a:focus { 
+  outline: none;
+}
+
 #scrollArea {
   height: 100%;
   overflow: auto;
@@ -7,21 +23,13 @@
   display: block;
 }
 
-.centered
-{
+.centered {
   text-align:center;
 }
 
-.logo{
+.logo {
   padding-top: 50px;
   padding-left: 170px;
-}
-.testclass{
-  background-color: black;
-}
-
-html,body{
-  height: 100%;
 }
 
 .scroll-top-wrapper {
@@ -35,7 +43,7 @@ html,body{
   color: #eeeeee;
   width: 34px;
   height: 34px;
-  line-height: 32px;
+  line-height: 34px;
   right: 5px;
   bottom: 5px;
   padding-top: 1px;
@@ -60,17 +68,6 @@ html,body{
 .scroll-top-wrapper i.fa {
   line-height: inherit;
 }
-
-
-a{
-  color: #80BD01;
-}
-
-a:hover {
-  color: #000000;
-}
-
-a:focus { outline: none }
 
 .btn-custom-spin.active {
   color: rgba(255, 255, 255, 0.75);
@@ -111,7 +108,7 @@ a:focus { outline: none }
 }
 .btn-custom-spin:active,
 .btn-custom-spin.active {
-  background-color: #478a01 ;
+  background-color: #478a01;
 }
 
 h1.page-header {
@@ -124,7 +121,6 @@ h1.page-header {
  background: #b3d4fc;
  padding: 5px;
  border: 5px;
-
 }
 
 .thumbnail h4 {
@@ -134,11 +130,10 @@ h1.page-header {
   text-align: left;
 }
 
-
-
 .photodivider{
   border-color: black;
 }
+
 .texthover:hover{
   color:#FF1919;
 }
@@ -149,18 +144,18 @@ h1.page-header {
   height: 100%;
   margin: 0 auto -110px; /* the bottom margin is the negative value of the footer's height */
 }
+
 .footer, .push {
   height: 110px; /* .push must be the same height as .footer */
 }
 
-.footer-custom-color{
+.footer-custom-color {
   background-color: #303030;
 }
 
 .navbar-static {
   background-color: #303030;
 }
-
 
 .btn-custom-spin-contact {
   color: #ffffff;
