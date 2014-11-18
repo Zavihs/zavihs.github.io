@@ -27,11 +27,6 @@ a:focus {
   text-align:center;
 }
 
-.logo {
-  padding-top: 50px;
-  padding-left: 170px;
-}
-
 .scroll-top-wrapper {
   position: fixed;
   opacity: 0;
@@ -216,4 +211,8 @@ h1.page-header {
 
 .testimonialhover:hover{
   color:#80BD01;
+}
+
+.panel{
+  border-color: black;
 }
