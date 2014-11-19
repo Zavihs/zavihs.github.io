@@ -1,5 +1,7 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 require_once 'phpmailer/PHPMailerAutoload.php';
+
 
 if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
 
