@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" ng-controller="indexCtrl" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +50,7 @@
               <li><a href="#/blog"><span class="glyphicon glyphicon-comment" style="vertical-align:center"></span> Blog</a>
               </li>
               <li>
-                <h4> <span class="label label-warning" style="horizontal-align:right">中文:</span> <input  type="checkbox" ng-init = "english = !chinese" ng-model ="chinese" ng-change ="english = !chinese; saveSetting()" id="lang" style="vertical-align: top"/><br/></h4>
+                <h4> <span class="label label-warning" style="horizontal-align:right">中文:</span> <input  type="checkbox" ng-init = "english = !chinese" ng-model ="chinese" ng-change ="saveSetting(); english = !chinese; " style="vertical-align: top"/><br/></h4>
               </li>
             </ul>
           </div>
@@ -58,7 +58,6 @@
         </div>
       <!-- /.container -->
       </nav>
-
 
       <div ng-view></div>
         <div class="scroll-top-wrapper">

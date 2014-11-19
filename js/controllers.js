@@ -3,13 +3,15 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-.controller('indexCtrl', ['$scope', '$location', function($scope, $location) {
-
-
+.controller('indexCtrl', ['$scope', '$location', '$cookieStore', function($scope, $location, $cookieStore) {
+  $scope.chinese = $cookieStore.get('Language')
+  $scope.saveSetting = function(){
+    $cookieStore.put('Language', $scope.chinese)
+  }
  
 }])
 
-.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'ScrollToTopService', function($scope, $location, anchorSmoothScroll, ScrollToTopService) {  
+.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'ScrollToTopService',  function($scope, $location, anchorSmoothScroll, ScrollToTopService) {  
   $scope.gotoElement = function (eID){
       anchorSmoothScroll.scrollTo(eID);   
     };
@@ -38,6 +40,7 @@ angular.module('myApp.controllers', [])
       $(this).tab('show');
     });  
   });
+
 }])
 
 .controller('blogCtrl', ['$scope', '$http', 'ScrollToTopService',function($scope,$http, ScrollToTopService) {
