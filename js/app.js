@@ -7,14 +7,15 @@ angular.module('myApp', [
   'myApp.directives',
   'myApp.controllers',
   'infinite-scroll',
-  'ngCookies'
+  'ngCookies',
+  'ngAnimate'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/index', {templateUrl: 'partials/index.html', controller: 'indexCtrl'});
   $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'aboutCtrl'});
   $routeProvider.when('/blog', {templateUrl: 'partials/blog.html', controller: 'blogCtrl'});
   $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: 'contactCtrl'});
-  $routeProvider.when('/photo', {templateUrl: 'partials/photo.html', controller: 'photoCtrl'});		
+  $routeProvider.when('/photo', {templateUrl: 'partials/photo.html', controller: 'photoCtrl'});   
   $routeProvider.when('/testimonials', {templateUrl: 'partials/testimonials.html', controller: 'testimonialsCtrl'});
   $routeProvider.when('/blog/1', {templateUrl: 'partials/blog1.html', controller: 'blogCtrl'});
   $routeProvider.when('/blog/2', {templateUrl: 'partials/blog2.html', controller: 'blogCtrl'});

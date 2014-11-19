@@ -4,7 +4,13 @@
 		<div class="col-lg-12">
 			<h1 class="page-header">
 				<span class="glyphicon glyphicon-camera camerahover" style="vertical-align:top"></span>      Photos
-			</h1>   
+					<div class="col-md-4 pull-right">
+						<div class="input-group">
+							<input type="text" class="form-control" ng-model="search">
+							<span class="input-group-addon">Search!</span>
+				  		</div>
+					</div>
+			</h1> 
 			<ol class="breadcrumb">
 				<li><a href="#/about.html">Home</a></li>
 				<li class="active">Photos</li>
@@ -13,7 +19,7 @@
 	</div>
 
 	<div class ="row">
-		<div ng-repeat="item in items | limitTo: limit">
+		<div ng-repeat="item in items | limitTo: limit | filter:search" class="repeat-animation">
 			<div class="col-md-4 centered" >
 				<div class="thumbnail">
 					<img ng-src="{{item.image}}" alt="Generic placeholder thumbnail">		
@@ -36,14 +42,8 @@
 		<span ng-if="LimitNotReached()">
 			<div class="col-md-1">
 				<a ng-click="incrementLimit();gotoElement('button')">
-					<button type="button" class="btn btn-custom-spin btn-lg"><span class="glyphicon glyphicon-plus-sign" style="vertical-align: -1.5px" id="button"></span>    More</button>
+					<button type="button" class="btn btn-custom-spin btn-lg" ng-disabled="!LimitNotReached()"><span class="glyphicon glyphicon-plus-sign" style="vertical-align: -1.5px" id="button"></span>    More</button>
 				</a>
-			</div>
-		</span>
-
-		<span ng-if="!LimitNotReached()">
-			<div class="col-md-1">
-					<button type="button" class="btn btn-custom-spin btn-lg" disabled><span class="glyphicon glyphicon-plus-sign" style="vertical-align: -1.5px" id="button"></span>    More</button>
 			</div>
 		</span>
 	</div>
