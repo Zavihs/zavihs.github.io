@@ -1,12 +1,11 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-require_once 'phpmailer/PHPMailerAutoload.php';
+require_once 'phpmailer/PHPMailerAutoload.php'
 
 
-if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message'])) {
 
     //check if any of the inputs are empty
-    if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputSubject']) || empty($_POST['inputMessage'])) {
+    if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message'])) {
         $data = array('success' => false, 'message' => 'Please fill out the form completely.');
         echo json_encode($data);
         exit;
@@ -15,11 +14,11 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     //create an instance of PHPMailer
     $mail = new PHPMailer();
 
-    $mail->From = $_POST['inputEmail'];
-    $mail->FromName = $_POST['inputName'];
-    $mail->AddAddress('zavihs@gmail.com'); //recipient 
-    $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->From = $_POST['email'];
+    $mail->FromName = $_POST['username'];
+    $mail->AddAddress('test@gmail.com'); //recipient 
+    $mail->Subject = $_POST['phone'];
+    $mail->Body = "Name: " . $_POST['username'] . "\r\n\r\nMessage: " . stripslashes($_POST['message']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];

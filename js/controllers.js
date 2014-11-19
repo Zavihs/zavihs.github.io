@@ -58,21 +58,47 @@ angular.module('myApp.controllers', [])
   }
 }])
 
-.controller('contactCtrl', ['$scope', 'ScrollToTopService', function($scope, ScrollToTopService) {
+.controller('contactCtrl', ['$scope', 'ScrollToTopService', '$http', function($scope, ScrollToTopService, $http) {
   $scope.formAllGood = function () {
 
     return ($scope.usernameGood && $scope.emailGood && $scope.messageGood)
   }
 
-  $scope.submit = function(){
-    var temp=$scope.formData
-    console.log(temp)
-    alert("hello");
-  }
 
   $scope.scrollToTop = function (){
     ScrollToTopService();
   }
+  //The code below and php was created using example here http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/
+  $scope.result = 'hidden'
+    $scope.resultMessage;
+    $scope.formData; //formData is an object holding the name, email, phone, and message
+    $scope.submitButtonDisabled = false;
+    $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
+
+    $scope.submit = function() {
+        $scope.submitted = true;
+        $scope.submitButtonDisabled = true;
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost:8000/app/data/contact-form.php',
+                data    : $.param($scope.formData),  //param method from jQuery
+                crossDomain: true,
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin': '*',
+                }  //set the headers so angular passing info as form data (not request payload)
+            }).success(function(data){
+                if (data.success) { //success comes from the return json object
+                    $scope.submitButtonDisabled = true;
+                    $scope.resultMessage = data.message;
+                    $scope.result='bg-success';
+                } else {
+                    $scope.submitButtonDisabled = false;
+                    $scope.resultMessage = data.message;
+                    $scope.result='bg-danger';
+                }
+            });
+        }  
+   
 }])
 
 .controller('photoCtrl', ['$scope',  '$http', '$location','anchorSmoothScroll', 'ScrollToTopService', function($scope, $http, $location, anchorSmoothScroll, ScrollToTopService) {
@@ -130,42 +156,5 @@ angular.module('myApp.controllers', [])
     ScrollToTopService();
   }
 }])
-  
-
-.controller('testCtrl', ['$scope', '$http', function($scope, $http) {
-  $scope.result = 'hidden'
-  $scope.resultMessage;
-    $scope.formData; //formData is an object holding the name, email, subject, and message
-    $scope.submitButtonDisabled = false;
-    $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
-    $scope.submit = function(contactform) {
-      $scope.submitted = true;
-      $scope.submitButtonDisabled = true;
-      if (contactform.$valid) {
-        $http({
-          method  : 'POST',
-          url     : 'contact-form.php',
-                data    : $.param($scope.formData),  //param method from jQuery
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
-            }).success(function(data){
-              console.log(data);
-                if (data.success) { //success comes from the return json object
-                  $scope.submitButtonDisabled = true;
-                  $scope.resultMessage = data.message;
-                  $scope.result='bg-success';
-                } else {
-                  $scope.submitButtonDisabled = false;
-                  $scope.resultMessage = data.message;
-                  $scope.result='bg-danger';
-                }
-            });
-        } else {
-          $scope.submitButtonDisabled = false;
-          $scope.resultMessage = 'Failed <img src="http://www.chaosm.net/blog/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley">  Please fill out all the fields.';
-            $scope.result='bg-danger';
-          }
-        }
-
-    }])
 
 
