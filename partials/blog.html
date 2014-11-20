@@ -13,17 +13,44 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-12">
-			<div ng-repeat="item in items ">
-				<div class="panel panel-primary">
-					<div class="panel-heading">{{item.heading}}</div>
-					<div class="panel-body">
-						<a href={{item.link}}>{{item.body}}</a>
-					</div>
-				</div>
+		<div class="col-lg-9">
+			<div ng-repeat="item in items | filter:search" class="repeat-animation">
+				<div class="well well-sm">
+					<h1>{{item.title}}</h1>
+					<h3><small>{{item.heading}} by <a href="http://ca.linkedin.com/in/jiejennyfang2009" target="_blank">Jenny Fang</a></small></h3>
+					<h3>{{item.body}}</h3>
+					<a class="btn btn-custom-spin" href={{item.link}} role="button" style="vertical-align:bottom">Read more!</a>	
+            	</div>
+            	<div class="clearfix"></div>
+            	<br><br>
 			</div>
 		</div>
+
+		<div class="col-md-3">
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="search">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-search" style="vertical-align:center"></span>
+	  		</div>
+	  		<hr class="featurette-divider photodivider">
+	  			<h3>About</h3>
+	  			<h4>In the blog section I will talk about current events and news in the world of Mining!</h4>
+	  		<hr class="featurette-divider photodivider">
+	  		<h3>Social Media</h3>
+	  		<ul class="list-unstyled list-inline list-social-icon" >
+                <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/GaBusinessGroupInc/info" data-toggle="tooltip"
+            data-placement="top" title="Facebook" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                <li class="tooltip-social linkedin-link"><a href="http://ca.linkedin.com/in/jiejennyfang2009" data-toggle="tooltip"
+                data-placement="top" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+                <li class="tooltip-social twitter-link"><a href="https://twitter.com/jiejennyfang" data-toggle="tooltip"
+                   data-placement="top" title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+            <hr class="featurette-divider photodivider">
+            <h3>Tweets!</h3>
+		</div>
 	</div>
+
+
+
+
 
     <h1 class="page-header">
     	<i class="fa fa-youtube-play youtubehover" style="vertical-align: center"></i> Youtube Videos

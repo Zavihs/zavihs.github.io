@@ -1,21 +1,25 @@
 [{
       "heading": "November 8th 2013",
-      "body": "Where do the prices of copper and zinc go?",
-      "link": "#/blog/4"
+      "title": "Where do the prices of copper and zinc go?",
+      "link": "#/blog/4",
+      "body": "China's MMG sees copper price steady, zinc market balanced (Reuters) Updated: 2013-11-08 13:42 Counter:14 Chinese metals producer MMG Ltd expects copper prices to hold around current levels in the medium term, with the market supported by solid growth in demand and new mines ramping up more slowly than projected."
    },
    {
       "heading": "May 21st 2013",
-      "body": "2012 Top 50 Global Gold Producers",
-      "link": "#/blog/3"
+      "title": "2012 Top 50 Global Gold Producers",
+      "link": "#/blog/3",
+      "body": "A table of Top Gold producers in the year 2012!"
    },
    {
       "heading": "March 29th 2013",
-      "body": "How fast Jiangxi Copper can go to make one of the world’s top 5 mining groups?",
-      "link": "#/blog/2"
+      "title": "How fast Jiangxi Copper can go to make one of the world’s top 5 mining groups?",
+      "link": "#/blog/2",
+      "body": "I recently had the pleasure to meet with my long-term friends and university classmates, Mr. Fan and Mr. Hou, who came to Vancouver, BC for a business trip March 24-29, 2013. Mr Fan and Mr. Hou are both working for China Jiangxi Copper Company (JCC); the largest copper producer in China. "
    },
    {
       "heading": "March 5th 2013",
-      "body": "2012世界上最大的10家铜矿公司",
-      "link": "#/blog/1"
+      "title": "2012世界上最大的10家铜矿公司",
+      "link": "#/blog/1",
+      "body": "2012年全球最大的10家铜矿公司铜产量初步估计占同比增长约2％，从2011年的914万吨增加至2012年的931万吨。排名前10位的铜企业中六家铜产量增加，四家下降（图1）。"
    }
 ]

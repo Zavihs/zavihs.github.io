@@ -8,11 +8,16 @@ angular.module('myApp.controllers', [])
   $scope.saveSetting = function(){
     $cookieStore.put('Language', $scope.chinese)
   }
+
+     $scope.isActive = function (viewLocation) { 
+        return viewLocation === $location.path();
+    };
  
 }])
 
 .controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'ScrollToTopService',  function($scope, $location, anchorSmoothScroll, ScrollToTopService) {  
   $scope.gotoElement = function (eID){
+
       anchorSmoothScroll.scrollTo(eID);   
     };
 
@@ -56,6 +61,10 @@ angular.module('myApp.controllers', [])
   $scope.scrollToTop = function (){
     ScrollToTopService();
   }
+
+  $('.pagination .disabled a, .pagination .active a').on('click', function(e) {
+    e.preventDefault();
+});
 }])
 
 .controller('contactCtrl', ['$scope', 'ScrollToTopService', '$http', function($scope, ScrollToTopService, $http) {

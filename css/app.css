@@ -153,6 +153,12 @@ h1.page-header {
 .navbar-static {
   background-color: #1d1d1d;
 }
+.navbar-static .navbar-nav > .active > a, 
+.navbar-static .navbar-nav > .active > a:hover, 
+.navbar-static .navbar-nav > .active > a:focus {
+  background: #80BD01;
+  color:#303030;
+}
 
 .btn-custom-spin-contact {
   color: #ffffff;
@@ -308,4 +314,3 @@ h1.page-header {
   left:0;
   opacity: 1;
 }
-
