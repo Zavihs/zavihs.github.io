@@ -21,7 +21,6 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/blog/2', {templateUrl: 'partials/blog2.html', controller: 'blogCtrl'});
   $routeProvider.when('/blog/3', {templateUrl: 'partials/blog3.html', controller: 'blogCtrl'});
   $routeProvider.when('/blog/4', {templateUrl: 'partials/blog4.html', controller: 'blogCtrl'});
-  $routeProvider.when('/test', {templateUrl: 'partials/test.html', controller: 'testCtrl'});
   $routeProvider.otherwise({redirectTo: '/about'});
 }]);
 

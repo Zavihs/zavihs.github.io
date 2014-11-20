@@ -1,5 +1,7 @@
 html,body {
   height: 100%;
+  font-family: 'Bree Serif', serif;
+  font-size: 15px !important;
 }
 
 a {
@@ -149,7 +151,7 @@ h1.page-header {
 }
 
 .navbar-static {
-  background-color: #303030;
+  background-color: #1d1d1d;
 }
 
 .btn-custom-spin-contact {
