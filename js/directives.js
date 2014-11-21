@@ -4,6 +4,26 @@
 
 
 angular.module('myApp.directives', [])
+.directive('scroll', function ($window){
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+             if (this.pageYOffset > 0 && this.pageYOffset < 450) {
+                scope.section = '1';
+             } else if (this.pageYOffset > 450 && this.pageYOffset < 1000){
+                scope.section = '2';    
+             } else if (this.pageYOffset > 1000 && this.pageYOffset < 1720){
+             	scope.section = '3';
+             } else if (this.pageYOffset > 1720 && this.pageYOffset < 2000){
+             	scope.section = '4'
+             } else if (this.pageYOffset > 2000) {
+             	scope.section = '5'
+             } else {
+             	scope.section ='0'
+             }
+            scope.$apply();
+        });
+    };
+})
 
 .directive('validUsername', function (){
 	return {

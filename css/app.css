@@ -314,3 +314,8 @@ h1.page-header {
   left:0;
   opacity: 1;
 }
+
+.sidebaractive{
+  color:black;
+  background-color: #EEE;
+}
