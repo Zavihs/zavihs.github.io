@@ -3,21 +3,24 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-.controller('indexCtrl', ['$scope', '$location', '$cookieStore', function($scope, $location, $cookieStore) {
+.controller('indexCtrl', ['$scope', '$location', '$cookieStore', 'ScrollToTopService', function($scope, $location, $cookieStore, ScrollToTopService) {
   $scope.chinese = $cookieStore.get('Language')
   $scope.saveSetting = function(){
     $cookieStore.put('Language', $scope.chinese)
   }
 
-     $scope.isActive = function (viewLocation) { 
+  $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
+
+    $scope.scrollToTop = function (){
+    ScrollToTopService();
+  }
  
 }])
 
-.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'ScrollToTopService',  function($scope, $location, anchorSmoothScroll, ScrollToTopService) {  
+.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', function($scope, $location, anchorSmoothScroll) {  
   $scope.gotoElement = function (eID){
-
       anchorSmoothScroll.scrollTo(eID);   
     };
 
@@ -35,10 +38,6 @@ angular.module('myApp.controllers', [])
     offset: navHeight
   });
 
-  $scope.scrollToTop = function (){
-    ScrollToTopService();
-  }
-
     $(function(){ 
     $('.nav-tabs a').on('click', function (e) {
       e.preventDefault();
@@ -48,35 +47,26 @@ angular.module('myApp.controllers', [])
 
 }])
 
-.controller('blogCtrl', ['$scope', '$http', 'ScrollToTopService',function($scope,$http, ScrollToTopService) {
+.controller('blogCtrl', ['$scope', '$http', function($scope,$http) {
   $scope.items = [];
   $http.get('data/blog.json').
   success(function(data) {
     $scope.items = data;
   }).
   error(function(data, status, headers, config) {
-    console.log("error getting blog json data")
+    console.log("Error getting Blog json data")
   });
-
-  $scope.scrollToTop = function (){
-    ScrollToTopService();
-  }
 
   $('.pagination .disabled a, .pagination .active a').on('click', function(e) {
     e.preventDefault();
 });
 }])
 
-.controller('contactCtrl', ['$scope', 'ScrollToTopService', '$http', function($scope, ScrollToTopService, $http) {
+.controller('contactCtrl', ['$scope','$http', function($scope, $http) {
   $scope.formAllGood = function () {
-
     return ($scope.usernameGood && $scope.emailGood && $scope.messageGood)
   }
 
-
-  $scope.scrollToTop = function (){
-    ScrollToTopService();
-  }
   //The code below and php was created using example here http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/
   $scope.result = 'hidden'
     $scope.resultMessage;
@@ -110,14 +100,14 @@ angular.module('myApp.controllers', [])
    
 }])
 
-.controller('photoCtrl', ['$scope',  '$http', '$location','anchorSmoothScroll', 'ScrollToTopService', function($scope, $http, $location, anchorSmoothScroll, ScrollToTopService) {
+.controller('photoCtrl', ['$scope',  '$http', '$location','anchorSmoothScroll', function($scope, $http, $location, anchorSmoothScroll) {
   $scope.items = [];
   $http.get('data/photo.json').
   success(function(data) {
     $scope.items = data;
   }).
   error(function(data, status, headers, config) {
-    console.log("error getting photo json data")
+    console.log("Error getting photo Json data")
   });
 
 
@@ -131,20 +121,13 @@ angular.module('myApp.controllers', [])
     return ($scope.limit < $scope.items.length) ? true :false;
   }
 
-
   $scope.gotoElement = function (eID){
         anchorSmoothScroll.scrollTo(eID, 30); 
      };
 
-  $scope.scrollToTop = function (){
-    ScrollToTopService();
-  }
-
-
-
 }])
 
-.controller('testimonialsCtrl', ['$scope', '$http', 'ScrollToTopService', function($scope, $http, ScrollToTopService) {
+.controller('testimonialsCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.items = [];
   $http.get('data/testimonials.json').
@@ -161,9 +144,6 @@ angular.module('myApp.controllers', [])
     $scope.limit += limitStep;
   };
 
-  $scope.scrollToTop = function (){
-    ScrollToTopService();
-  }
 }])
 
 
