@@ -194,13 +194,13 @@ h1.page-header {
   #sidebar.affix-top {
     position: static;
     margin-top:30px;
-    width:228px;
+    width:220px;
   }
   
   #sidebar.affix {
     position: fixed;
     top:70px;
-    width:228px;
+    width:220px;
   }
 }
 
@@ -319,3 +319,4 @@ h1.page-header {
   color:black;
   background-color: #EEE;
 }
+

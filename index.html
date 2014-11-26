@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" ng-controller="indexCtrl" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="myApp" ng-controller="indexCtrl" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,11 +18,7 @@
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
     <div class="wrapper">
-
       <nav class="navbar navbar-inverse navbar-static" role="navigation">
         <div class="container">
           <div class="navbar-header" id="top">
@@ -48,7 +41,7 @@
               </li>
               <li ng-class="{ active: isActive('/contact')}"><a href="#/contact"><span class="glyphicon glyphicon-globe" style="vertical-align:center"></span> Contact US</a>
               </li>
-              <li ng-class="{ active: isActive('/blog')}"><a href="#/blog"><span class="glyphicon glyphicon-comment" style="vertical-align:center"></span> Blog</a>
+              <li ng-class="{ active: isActive('blog')}"><a href="#/blog"><span class="glyphicon glyphicon-comment" style="vertical-align:center"></span> Blog</a>
               </li>
               <li>
                 <h4>

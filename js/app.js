@@ -17,10 +17,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: 'contactCtrl'});
   $routeProvider.when('/photo', {templateUrl: 'partials/photo.html', controller: 'photoCtrl'});   
   $routeProvider.when('/testimonials', {templateUrl: 'partials/testimonials.html', controller: 'testimonialsCtrl'});
-  $routeProvider.when('/blog/1', {templateUrl: 'partials/blog1.html', controller: 'blogCtrl'});
-  $routeProvider.when('/blog/2', {templateUrl: 'partials/blog2.html', controller: 'blogCtrl'});
-  $routeProvider.when('/blog/3', {templateUrl: 'partials/blog3.html', controller: 'blogCtrl'});
-  $routeProvider.when('/blog/4', {templateUrl: 'partials/blog4.html', controller: 'blogCtrl'});
+  $routeProvider.when('/blog/:blogId', {templateUrl: 'partials/blogtemplate.html', controller: 'blogTemplateCtrl'});
   $routeProvider.otherwise({redirectTo: '/about'});
 }]);
 

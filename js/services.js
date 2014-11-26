@@ -123,4 +123,4 @@ angular.module('myApp.services', []).
     }
 
   });
-});
+})

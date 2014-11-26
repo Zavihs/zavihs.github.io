@@ -14,12 +14,12 @@
 
 	<div class="row">
 		<div class="col-lg-9">
-			<div ng-repeat="item in items | filter:search" class="repeat-animation">
+			<div ng-repeat="item in items | filter:search | reverse" class="repeat-animation">
 				<div class="well well-sm">
 					<h1>{{item.title}}</h1>
-					<h3><small>{{item.heading}} by <a href="http://ca.linkedin.com/in/jiejennyfang2009" target="_blank">Jenny Fang</a></small></h3>
-					<h3>{{item.body}}</h3>
-					<a class="btn btn-custom-spin" href={{item.link}} role="button" style="vertical-align:bottom">Read more!</a>	
+					<h3><small>{{item.date}} by <a href="http://ca.linkedin.com/in/jiejennyfang2009" target="_blank">Jenny Fang</a></small></h3>
+					<h3>{{item.entrytitle}}</h3>
+					<a class="btn btn-custom-spin" href="#/blog/{{item.id}}"role="button" style="vertical-align:bottom">Read more!</a>	
             	</div>
             	<div class="clearfix"></div>
             	<br><br>
@@ -34,6 +34,7 @@
 	  		<hr class="featurette-divider photodivider">
 	  			<h3>About</h3>
 	  			<h4>In the blog section I will talk about current events and news in the world of Mining!</h4>
+	  			<!-- <img class="img-responsive center-block" src="http://thecatapi.com/api/images/get?format=src&type=jpg"> -->
 	  		<hr class="featurette-divider photodivider">
 	  		<h3>Social Media</h3>
 	  		<ul class="list-unstyled list-inline list-social-icon" >

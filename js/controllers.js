@@ -10,7 +10,8 @@ angular.module('myApp.controllers', [])
   }
 
   $scope.isActive = function (viewLocation) { 
-        return viewLocation === $location.path();
+        var temp = ($location.path()).split('/');
+        return ((viewLocation === $location.path()) || (viewLocation === temp[1]));
     };
 
     $scope.scrollToTop = function (){
@@ -47,9 +48,9 @@ angular.module('myApp.controllers', [])
 
 }])
 
-.controller('blogCtrl', ['$scope', '$http', function($scope,$http) {
+.controller('blogCtrl', ['$scope', '$http', '$routeParams', function($scope,$http, $routeParams) {
   $scope.items = [];
-  $http.get('data/blog.json').
+  $http.get('data/blogentries.json').
   success(function(data) {
     $scope.items = data;
   }).
@@ -57,9 +58,28 @@ angular.module('myApp.controllers', [])
     console.log("Error getting Blog json data")
   });
 
-  $('.pagination .disabled a, .pagination .active a').on('click', function(e) {
-    e.preventDefault();
-});
+
+}])
+
+.controller('blogTemplateCtrl', ['$scope', '$http', '$routeParams',function($scope, $http, $routeParams) {
+
+    $scope.blogs = [];
+    $http.get('data/blogentries.json').
+    success(function(data) {
+        $scope.blogs = data;
+        $scope.result = $scope.blogs[($routeParams.blogId)-1];
+        $scope.count = $scope.blogs.length;
+        $scope.blogid = Number($routeParams.blogId);
+    }).
+    error(function(data, status, headers, config) {
+        console.log("Error getting Blog entries json data")
+    });
+
+    $('.pager .disabled a').on('click', function(e) {
+      e.preventDefault();
+  });
+
+
 }])
 
 .controller('contactCtrl', ['$scope','$http', function($scope, $http) {
