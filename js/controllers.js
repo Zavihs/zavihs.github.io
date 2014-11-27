@@ -19,7 +19,7 @@ angular.module('myApp.controllers', [])
  
 }])
 
-.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'TabSelectService', 'SideBarScrollService', function($scope, $location, anchorSmoothScroll, TabSelectService, SideBarScrollService) {  
+.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'TabSelectService', function($scope, $location, anchorSmoothScroll, TabSelectService) {  
   $scope.gotoElement = function (eID){
       anchorSmoothScroll.scrollTo(eID);   
     };
@@ -28,9 +28,19 @@ angular.module('myApp.controllers', [])
       TabSelectionService();
     }
 
-    $scope.SideBarScrolling = function (){
-      SideBarScrollService();
-    }
+    $('#sidebar').affix({
+        offset: {
+          top: 100
+        }
+    });
+
+    var $body   = $(document.body);
+    var navHeight = $('.navbar').outerHeight(true) + 10;
+
+    $body.scrollspy({
+        target: '#leftCol',
+        offset: navHeight
+    });
 
 }])
 
