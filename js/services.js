@@ -124,3 +124,28 @@ angular.module('myApp.services', []).
 
   });
 })
+
+.service('TabSelectService', function () {
+    $(function(){ 
+        $('.nav-tabs a').on('click', function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });  
+    });
+})
+
+.service('SideBarScrollService', function () {
+    $('#sidebar').affix({
+        offset: {
+          top: 100
+        }
+    });
+
+    var $body   = $(document.body);
+    var navHeight = $('.navbar').outerHeight(true) + 10;
+
+    $body.scrollspy({
+        target: '#leftCol',
+        offset: navHeight
+    });
+})

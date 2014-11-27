@@ -6,13 +6,12 @@ angular.module('myApp.controllers', [])
 .controller('indexCtrl', ['$scope', '$location', '$cookieStore', 'ScrollToTopService', function($scope, $location, $cookieStore, ScrollToTopService) {
   $scope.chinese = $cookieStore.get('Language')
   $scope.saveSetting = function(){
-    $cookieStore.put('Language', $scope.chinese)
+    $cookieStore.put('Language', $scope.chinese);
   }
 
   $scope.isActive = function (viewLocation) { 
-        var temp = ($location.path()).split('/');
-        return ((viewLocation === $location.path()) || (viewLocation === temp[1]));
-    };
+        return ((viewLocation === $location.path()) || (viewLocation === ($location.path()).split('/')[1]));
+    }
 
     $scope.scrollToTop = function (){
     ScrollToTopService();
@@ -20,48 +19,35 @@ angular.module('myApp.controllers', [])
  
 }])
 
-.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', function($scope, $location, anchorSmoothScroll) {  
+.controller('aboutCtrl', ['$scope', '$location', 'anchorSmoothScroll', 'TabSelectService', 'SideBarScrollService', function($scope, $location, anchorSmoothScroll, TabSelectService, SideBarScrollService) {  
   $scope.gotoElement = function (eID){
       anchorSmoothScroll.scrollTo(eID);   
     };
 
-  $('#sidebar').affix({
-      offset: {
-        top: 100
-      }
-  });
+    $scope.SelectTabs = function (){
+      TabSelectionService();
+    }
 
-  var $body   = $(document.body);
-  var navHeight = $('.navbar').outerHeight(true) + 10;
-
-  $body.scrollspy({
-    target: '#leftCol',
-    offset: navHeight
-  });
-
-    $(function(){ 
-    $('.nav-tabs a').on('click', function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    });  
-  });
+    $scope.SideBarScrolling = function (){
+      SideBarScrollService();
+    }
 
 }])
 
-.controller('blogCtrl', ['$scope', '$http', '$routeParams', function($scope,$http, $routeParams) {
+.controller('blogCtrl', ['$scope', '$http', function($scope,$http) {
   $scope.items = [];
   $http.get('data/blogentries.json').
   success(function(data) {
     $scope.items = data;
   }).
   error(function(data, status, headers, config) {
-    console.log("Error getting Blog json data")
+    console.log("Error getting Blog json data, this should not happen unless its been deleted")
   });
 
 
 }])
 
-.controller('blogTemplateCtrl', ['$scope', '$http', '$routeParams',function($scope, $http, $routeParams) {
+.controller('blogTemplateCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
 
     $scope.blogs = [];
     $http.get('data/blogentries.json').
@@ -69,15 +55,15 @@ angular.module('myApp.controllers', [])
         $scope.blogs = data;
         $scope.result = $scope.blogs[($routeParams.blogId)-1];
         $scope.count = $scope.blogs.length;
+        //if trying to access a blog url without an entry, redirect to blog main page
+        if ($routeParams.blogId > $scope.blogs.length){
+          $location.path('/blog');
+        }
         $scope.blogid = Number($routeParams.blogId);
     }).
     error(function(data, status, headers, config) {
-        console.log("Error getting Blog entries json data")
+        console.log("Error getting Blog entries json data, this should not happen unless its been deleted")
     });
-
-    $('.pager .disabled a').on('click', function(e) {
-      e.preventDefault();
-  });
 
 
 }])
@@ -127,7 +113,7 @@ angular.module('myApp.controllers', [])
     $scope.items = data;
   }).
   error(function(data, status, headers, config) {
-    console.log("Error getting photo Json data")
+    console.log("Error getting Photo json data, this should not happen unless its been deleted")
   });
 
 
@@ -155,7 +141,7 @@ angular.module('myApp.controllers', [])
     $scope.items = data;
   }).
   error(function(data, status, headers, config) {
-    console.log("error getting testimonials json data")
+    console.log("error getting Testimonials json data, this should not happen unless its been deleted")
   });
 
   var limitStep = 3;
